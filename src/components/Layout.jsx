@@ -2,13 +2,12 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './Login';
+
 
 const Layout = () => {
-  const { isAuthenticated,isLoading } = useAuth0();
 
-  if (isAuthenticated|| !isLoading) {
+
+
     return (
       <div className='min-h-screen bg-gray-100'>
         <Navbar />
@@ -20,7 +19,6 @@ const Layout = () => {
         </div>
       </div>
     );
-  } else return (<LoginButton />);
 };
 
 export default Layout;

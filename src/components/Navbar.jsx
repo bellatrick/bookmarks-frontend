@@ -3,15 +3,26 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { LogOut, User2Icon } from 'lucide-react';
 
 function Navbar() {
-  const { user, logout } = useAuth0();
+  const { user, logout, isAuthenticated, loginWithRedirect } = useAuth0();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  console.log(user);
 
   return (
     <header className='flex justify-between items-center bg-gray-900 p-4 text-gray-100'>
       {/* Logo */}
-      <div className='text-xl font-bold'>BookLinks</div>
-
+      <div className='text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500'>
+        BookLinks
+      </div>
+      <div>
+        {' '}
+        {!isAuthenticated && (
+          <button
+            className='moving-gradient-btn px-4 py-3 rounded-md cursor-pointer'
+            onClick={() => loginWithRedirect()}
+          >
+            Log In
+          </button>
+        )}
+      </div>
       {/* User Info with Dropdown */}
       {user && (
         <div className='relative'>
