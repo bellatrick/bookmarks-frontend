@@ -20,7 +20,7 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <form onSubmit={handleSearch} className='space-y-4'>
-      <div className='flex gap-4'>
+      <div className='flex flex-wrap gap-4'>
         <div className='flex-1'>
           <input
             type='text'
@@ -30,13 +30,7 @@ const SearchBar = ({ onSearch }) => {
             className='w-full p-2 border rounded'
           />
         </div>
-        <button type='submit' className='px-4 py-2 moving-gradient-btn'>
-          <Search size={20} />
-        </button>
-      </div>
-
-      <div className='flex flex-wrap gap-4'>
-
+        <div className='flex gap-4'>
         <input
           type='date'
           value={dateFrom}
@@ -50,6 +44,12 @@ const SearchBar = ({ onSearch }) => {
           className='p-2 border rounded'
         />
       </div>
+        <button type='submit' className='px-4 py-2 moving-gradient-btn'>
+          <Search size={20} />
+        </button>
+      </div>
+
+
     </form>
   );
 };
