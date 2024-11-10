@@ -13,7 +13,7 @@ const BookmarkList = ({ bookmarks }) => {
           bookmark={bookmark}
           onShare={shareBookmark}
         />
-      )).reverse()}
+      ))}
     </div>
   );
 };

@@ -43,7 +43,7 @@ const Dashboard = () => {
           </div>
         )}
 
-        <BookmarkList bookmarks={bookmarks} />
+        <BookmarkList bookmarks={bookmarks.reverse()} />
       </div>
     );
 

@@ -3,13 +3,12 @@ import { Search } from 'lucide-react';
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
-  const [tags, setTags] = useState('');
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const searchParams = { query, tags: tags || '' };
+    const searchParams = { query };
     if (dateFrom) {
       searchParams.dateFrom = dateFrom;
     }
@@ -36,14 +35,8 @@ const SearchBar = ({ onSearch }) => {
         </button>
       </div>
 
-      <div className='flex gap-4'>
-        <input
-          type='text'
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-          placeholder='Filter by tags (comma-separated)'
-          className='flex-1 p-2 border rounded'
-        />
+      <div className='flex flex-wrap gap-4'>
+
         <input
           type='date'
           value={dateFrom}

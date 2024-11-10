@@ -22,7 +22,7 @@ const BookmarkCard = ({ bookmark, onShare, onDelete }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showCollections]);
   return (
-    <div className='p-4 bg-gray-800 text-white rounded-lg gradient-border relative'>
+    <div className='p-4 w-[300px] md:w-auto bg-gray-800 text-white rounded-lg gradient-border relative'>
       <div className='flex justify-between items-start'>
         <div className='max-w-[20ch] py-6'>
           <h3 className='font-medium truncate'>{bookmark.title}</h3>
